@@ -10,11 +10,14 @@
 import os
 import subprocess
 import unicodedata
-import urllib2
+
+import urllib.request
+import urllib.error
+
 import json
 import csv
 import re
-import StringIO
+import io
 import random
 import numpy
 import math
