@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 # # # # # # # # # # # # # # # # # # # # # # # #
 #
 #  e-Stat API Adaptor
@@ -209,11 +206,11 @@ class e_Stat_API_Adaptor:
                 ).split('\n')
                 if f != ''
             ]
-            print ix
+            print(ix)
             ix.sort()
             ix = [hash.values()[0] for hash in ix]
             for i, json_file in enumerate(ix):
-                print i, json_file
+                print(i, json_file)
                 jd = self.load_json(json_file)
                 if i == 0:
                     dat['header'] = [
@@ -318,7 +315,7 @@ class e_Stat_API_Adaptor:
             if self._['next_key'] == True:
                 while next_key != '-1':
                     next_key = self.get_all_data(statsDataId, next_key)
-                    print next_key
+                    print(next_key)
             else:
                 self.get_all_data(statsDataId, next_key)
             self.convert_raw_json_to_csv(statsDataId)
@@ -352,10 +349,10 @@ class e_Stat_API_Adaptor:
             return json.dumps(data)
         elif output_type == 'cjson':
             tmp_data = [d for d in csv.reader(StringIO.StringIO(data.strip()))]
-            print tmp_data[0]
+            print(tmp_data[0])
             data = {}
             for i in range(0, len(tmp_data[0])):
-                print tmp_data[0][i]
+                print(tmp_data[0][i])
                 data[tmp_data[0][i]] = [get_tmp_data(tmp_data[0][i], tmp_data[j][
                                                      i]) for j in range(1, len(tmp_data))]
             return json.dumps(data)
