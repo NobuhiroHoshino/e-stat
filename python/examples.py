@@ -12,7 +12,7 @@ eStatAPI = e_Stat_API_Adaptor.e_Stat_API_Adaptor({
     # 対応時はTrue/非対応時はFalse
     , 'next_key'	: True
     # 中間アプリの設置ディレクトリ
-    , 'directory': '/Users/nobuhiro/pycharmprojects/e-stat/python'
+    , 'directory': '/Users/nobuhiro/pycharmprojects/e-stat/'
     # APIのバージョン
     , 'ver'		: '3.0'
 })
